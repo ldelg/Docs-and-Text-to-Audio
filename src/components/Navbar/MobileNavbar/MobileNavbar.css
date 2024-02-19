@@ -1,0 +1,25 @@
+.mobile-navbar {
+  font-size: medium;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #1f5156 !important;
+}
+
+.MuiButtonBase-root {
+    padding: 0 !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+.MuiBottomNavigationAction-label {
+  font-size: 11px !important;
+  color: #fff;
+  margin-top: 3px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
