@@ -5,16 +5,17 @@
   left: 0;
   right: 0;
   background-color: #1f5156 !important;
+  z-index: 999;
 }
 
 .MuiButtonBase-root {
-    padding: 0 !important;
-    max-width: none !important;
-    min-width: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+  min-width: 0 !important;
 }
 
 .MuiBottomNavigationAction-label {
-  font-size: 11px !important;
+  font-size: 13px !important;
   color: #fff;
   margin-top: 3px;
 }

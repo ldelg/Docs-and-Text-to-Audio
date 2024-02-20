@@ -1,12 +1,27 @@
+body {
+  background: linear-gradient(90deg, #bfdddf, #70bdc2);
+}
+
 .container {
   border-radius: 10px;
-  background-color: lightgrey;
+  background: linear-gradient(90deg, #bfdddf, #70bdc2);
   padding: 20px;
   margin: 20px;
-  max-width: 500px;
+  max-width: 330px;
+  left: 45%;
   position: relative;
-  left: 50%;
   transform: translate(-50%);
+  box-shadow: 0 8px 20px #00000045;
+  color: #1f5156;
+
+  @media (min-width: 468px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 640px) {
+    left: 50%;
+    max-width: 500px;
+  }
 }
 
 .container-rate-pitch {
@@ -36,7 +51,7 @@
 
 button {
   border-radius: 4px;
-  font-size: 16px;
+  font-size: medium;
   padding: 8px;
   text-align: center;
   width: 100%;
@@ -47,6 +62,7 @@ button {
 }
 
 h2 {
+  font-size: large;
   margin-top: 0;
 }
 
@@ -58,7 +74,6 @@ label {
 
 select,
 textarea {
-  font-size: 16px;
   margin-bottom: 12px;
   width: 100%;
 }
@@ -67,4 +82,17 @@ textarea {
   border: 1px solid darkgrey;
   border-radius: 10px;
   padding: 10px;
+  font-size: small;
+  padding: 3px;
+  @media (min-width: 640px) {
+    font-size: medium;
+  }
+}
+
+.title {
+  margin-bottom: 10px;
+}
+
+.active-range {
+  accent-color: #1f5156;
 }
