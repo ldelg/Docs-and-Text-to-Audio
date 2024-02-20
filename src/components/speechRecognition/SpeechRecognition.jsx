@@ -1,10 +1,12 @@
 import React, { useState, useRef } from "react";
+import { ColorRing } from "react-loader-spinner";
 
 const SpeechRecognition = () => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcription, setTranscription] = useState("");
   const mediaRecorderRef = useRef(null);
   const audioChunksRef = useRef([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const startRecording = async () => {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -37,6 +39,7 @@ const SpeechRecognition = () => {
   };
 
   const sendAudioToServer = (audioBlob) => {
+    setIsLoading(true);
     const formData = new FormData();
     formData.append("audio", audioBlob, "audio.wav");
 
@@ -46,10 +49,14 @@ const SpeechRecognition = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setTranscription(data.transcription);
+        const transcriptionText = data.text;
+        setTranscription(transcriptionText);
       })
       .catch((error) => {
         console.error("Error transcribing audio:", error);
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
 
@@ -62,9 +69,20 @@ const SpeechRecognition = () => {
       <button onClick={stopRecording} disabled={!isRecording}>
         Stop Recording
       </button>
-      <p>
-        <strong>Transcription:</strong> {transcription}
-      </p>
+      <div className="small-container">
+        {isLoading ? (
+          <ColorRing
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="color-ring-loading"
+            wrapperClass="color-ring-wrapper"
+            colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
+          />
+        ) : transcription ? (
+          <textarea rows="8" value={transcription} />
+        ) : null}
+      </div>
     </div>
   );
 };
