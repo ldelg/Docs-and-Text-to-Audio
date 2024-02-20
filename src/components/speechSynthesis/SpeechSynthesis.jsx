@@ -137,6 +137,7 @@ const SpeechSynthesis = () => {
                 <div className="rate-value">{rate}</div>
               </div>
               <input
+                className="active-range"
                 type="range"
                 min="0.5"
                 max="4"
@@ -154,6 +155,7 @@ const SpeechSynthesis = () => {
                 <div className="pitch-value">{pitch}</div>
               </div>
               <input
+                className="active-range"
                 type="range"
                 min="0"
                 max="4"
@@ -181,7 +183,7 @@ const SpeechSynthesis = () => {
               <textarea
                 id="message"
                 name="message"
-                rows={8}
+                rows={5}
                 value={text}
                 onChange={(event) => {
                   setText(event.target.value);

@@ -62,8 +62,8 @@ const SpeechRecognition = () => {
 
   return (
     <div className="container">
-      <h2>Speech Recognition</h2>
-      <button onClick={startRecording} disabled={isRecording}>
+      <h2 className="title">Speech Recognition</h2>
+      <button className="title" onClick={startRecording} disabled={isRecording}>
         Start Recording
       </button>
       <button onClick={stopRecording} disabled={!isRecording}>
@@ -80,7 +80,7 @@ const SpeechRecognition = () => {
             colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
           />
         ) : transcription ? (
-          <textarea rows="8" value={transcription} />
+          <textarea rows="8" defaultValue={transcription}/>
         ) : null}
       </div>
     </div>
