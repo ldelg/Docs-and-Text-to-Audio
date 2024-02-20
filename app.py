@@ -3,7 +3,6 @@ import deepspeech
 import numpy as np
 import wave
 from flask_cors import CORS
-import subprocess
 import os
 from pydub import AudioSegment
 
