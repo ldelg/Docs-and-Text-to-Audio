@@ -63,6 +63,15 @@ const SpeechRecognition = () => {
   return (
     <div className="container">
       <h2 className="title">Speech Recognition</h2>
+      
+      <p>
+        Effortlessly transform spoken words into written text with unparalleled
+        accuracy. Say goodbye to manual transcription and hello to seamless
+        productivity. Experience the power of real-time conversion, enabling
+        efficient note-taking, transcription tasks, and accessibility for all.
+        Unlock the potential of your voice with our intuitive and reliable
+        Speech-to-Text technology
+      </p>
       <button className="title" onClick={startRecording} disabled={isRecording}>
         Start Recording
       </button>
@@ -80,7 +89,7 @@ const SpeechRecognition = () => {
             colors={["#e15b64", "#f47e60", "#f8b26a", "#abbd81", "#849b87"]}
           />
         ) : transcription ? (
-          <textarea rows="8" defaultValue={transcription}/>
+          <textarea rows="8" defaultValue={transcription} />
         ) : null}
       </div>
     </div>
