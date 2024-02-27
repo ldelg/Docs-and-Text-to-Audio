@@ -9,7 +9,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-model_path = 'models/vosk-model-en-us-0.22-lgraph'
+model_path = 'models/vosk-model-en-us-0.22'
 if not os.path.exists(model_path):
     print("Model path is incorrect. Please adjust it.")
     exit(1)
