@@ -1,2 +1,4 @@
-*.scorer filter=lfs diff=lfs merge=lfs -text
-*.pbmm filter=lfs diff=lfs merge=lfs -text
+models/vosk-model-en-us-0.21/rescore/G.carpa filter=lfs diff=lfs merge=lfs -text
+models/vosk-model-en-us-0.21/graph/HCLG.fst filter=lfs diff=lfs merge=lfs -text
+models/vosk-model-en-us-0.21/rnnlm/final.raw filter=lfs diff=lfs merge=lfs -text
+models/vosk-model-en-us-0.21/am/final.mdl filter=lfs diff=lfs merge=lfs -text
